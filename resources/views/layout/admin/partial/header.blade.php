@@ -1,502 +1,287 @@
-<header class="main-header " id="header">
-    <nav class="navbar navbar-static-top navbar-expand-lg">
-      <button id="sidebar-toggler" class="sidebar-toggle">
-        <span class="sr-only">Toggle navigation</span>
-      </button>
-      <div class="search-form d-none d-lg-inline-block">
-        <div class="input-group">
-          <button type="button" name="search" id="search-btn" class="btn btn-flat">
-            <i class="mdi mdi-magnify"></i>
-          </button>
-          <input type="text" name="query" id="search-input" class="form-control" placeholder="'button', 'chart' etc."
-            autofocus autocomplete="off" />
-        </div>
-        <div id="search-results-container">
-          <ul id="search-results"></ul>
-        </div>
+<nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow">
+  <div class="navbar-container d-flex content">
+      <div class="bookmark-wrapper d-flex align-items-center">
+          <ul class="nav navbar-nav d-xl-none">
+              <li class="nav-item"><a class="nav-link menu-toggle" href="javascript:void(0);"><i class="ficon" data-feather="menu"></i></a></li>
+          </ul>
+          <ul class="nav navbar-nav bookmark-icons">
+              <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-email.html" data-toggle="tooltip" data-placement="top" title="Email"><i class="ficon" data-feather="mail"></i></a></li>
+              <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-chat.html" data-toggle="tooltip" data-placement="top" title="Chat"><i class="ficon" data-feather="message-square"></i></a></li>
+              <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-calendar.html" data-toggle="tooltip" data-placement="top" title="Calendar"><i class="ficon" data-feather="calendar"></i></a></li>
+              <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-todo.html" data-toggle="tooltip" data-placement="top" title="Todo"><i class="ficon" data-feather="check-square"></i></a></li>
+          </ul>
+          <ul class="nav navbar-nav">
+              <li class="nav-item d-none d-lg-block"><a class="nav-link bookmark-star"><i class="ficon text-warning" data-feather="star"></i></a>
+                  <div class="bookmark-input search-input">
+                      <div class="bookmark-input-icon"><i data-feather="search"></i></div>
+                      <input class="form-control input" type="text" placeholder="Bookmark" tabindex="0" data-search="search">
+                      <ul class="search-list search-list-bookmark"></ul>
+                  </div>
+              </li>
+          </ul>
       </div>
-
-      <div class="navbar-right ">
-        <ul class="nav navbar-nav">
-          <li class="dropdown notifications-menu custom-dropdown">
-            <button class="dropdown-toggle notify-toggler custom-dropdown-toggler">
-              <i class="mdi mdi-bell-outline"></i>
-            </button>
-
-            <div class="card card-default dropdown-notify dropdown-menu-right mb-0">
-              <div class="card-header card-header-border-bottom px-3">
-                <h2>Notifications</h2>
+      <ul class="nav navbar-nav align-items-center ml-auto">
+          <li class="nav-item dropdown dropdown-language"><a class="nav-link dropdown-toggle" id="dropdown-flag" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-us"></i><span class="selected-language">English</span></a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="javascript:void(0);" data-language="en"><i class="flag-icon flag-icon-us"></i> English</a><a class="dropdown-item" href="javascript:void(0);" data-language="fr"><i class="flag-icon flag-icon-fr"></i> French</a><a class="dropdown-item" href="javascript:void(0);" data-language="de"><i class="flag-icon flag-icon-de"></i> German</a><a class="dropdown-item" href="javascript:void(0);" data-language="pt"><i class="flag-icon flag-icon-pt"></i> Portuguese</a></div>
+          </li>
+          <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="moon"></i></a></li>
+          <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon" data-feather="search"></i></a>
+              <div class="search-input">
+                  <div class="search-input-icon"><i data-feather="search"></i></div>
+                  <input class="form-control input" type="text" placeholder="Explore Vuexy..." tabindex="-1" data-search="search">
+                  <div class="search-input-close"><i data-feather="x"></i></div>
+                  <ul class="search-list search-list-main"></ul>
               </div>
-
-              <div class="card-body px-0 py-3">
-                <ul class="nav nav-tabs nav-style-border p-0 justify-content-between" id="myTab" role="tablist">
-                  <li class="nav-item mx-3 my-0 py-0">
-                    <a class="nav-link active pb-3" id="home2-tab" data-toggle="tab" href="#home2" role="tab" aria-controls="home2" aria-selected="true">All (11)</a>
+          </li>
+          <li class="nav-item dropdown dropdown-cart mr-25"><a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"><i class="ficon" data-feather="shopping-cart"></i><span class="badge badge-pill badge-primary badge-up cart-item-count">6</span></a>
+              <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                  <li class="dropdown-menu-header">
+                      <div class="dropdown-header d-flex">
+                          <h4 class="notification-title mb-0 mr-auto">My Cart</h4>
+                          <div class="badge badge-pill badge-light-primary">4 Items</div>
+                      </div>
                   </li>
-
-                  <li class="nav-item mx-3 my-0 py-0">
-                    <a class="nav-link pb-3" id="profile2-tab" data-toggle="tab" href="#profile2" role="tab" aria-controls="profile2" aria-selected="false">Msgs (6)</a>
+                  <li class="scrollable-container media-list">
+                      <div class="media align-items-center"><img class="d-block rounded mr-1" src="assets/images/pages/eCommerce/1.png" alt="donuts" width="62">
+                          <div class="media-body"><i class="ficon cart-item-remove" data-feather="x"></i>
+                              <div class="media-heading">
+                                  <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> Apple watch 5</a></h6><small class="cart-item-by">By Apple</small>
+                              </div>
+                              <div class="cart-item-qty">
+                                  <div class="input-group">
+                                      <input class="touchspin-cart" type="number" value="1">
+                                  </div>
+                              </div>
+                              <h5 class="cart-item-price">$374.90</h5>
+                          </div>
+                      </div>
+                      <div class="media align-items-center"><img class="d-block rounded mr-1" src="assets/images/pages/eCommerce/7.png" alt="donuts" width="62">
+                          <div class="media-body"><i class="ficon cart-item-remove" data-feather="x"></i>
+                              <div class="media-heading">
+                                  <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> Google Home Mini</a></h6><small class="cart-item-by">By Google</small>
+                              </div>
+                              <div class="cart-item-qty">
+                                  <div class="input-group">
+                                      <input class="touchspin-cart" type="number" value="3">
+                                  </div>
+                              </div>
+                              <h5 class="cart-item-price">$129.40</h5>
+                          </div>
+                      </div>
+                      <div class="media align-items-center"><img class="d-block rounded mr-1" src="assets/images/pages/eCommerce/2.png" alt="donuts" width="62">
+                          <div class="media-body"><i class="ficon cart-item-remove" data-feather="x"></i>
+                              <div class="media-heading">
+                                  <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> iPhone 11 Pro</a></h6><small class="cart-item-by">By Apple</small>
+                              </div>
+                              <div class="cart-item-qty">
+                                  <div class="input-group">
+                                      <input class="touchspin-cart" type="number" value="2">
+                                  </div>
+                              </div>
+                              <h5 class="cart-item-price">$699.00</h5>
+                          </div>
+                      </div>
+                      <div class="media align-items-center"><img class="d-block rounded mr-1" src="assets/images/pages/eCommerce/3.png" alt="donuts" width="62">
+                          <div class="media-body"><i class="ficon cart-item-remove" data-feather="x"></i>
+                              <div class="media-heading">
+                                  <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> iMac Pro</a></h6><small class="cart-item-by">By Apple</small>
+                              </div>
+                              <div class="cart-item-qty">
+                                  <div class="input-group">
+                                      <input class="touchspin-cart" type="number" value="1">
+                                  </div>
+                              </div>
+                              <h5 class="cart-item-price">$4,999.00</h5>
+                          </div>
+                      </div>
+                      <div class="media align-items-center"><img class="d-block rounded mr-1" src="assets/images/pages/eCommerce/5.png" alt="donuts" width="62">
+                          <div class="media-body"><i class="ficon cart-item-remove" data-feather="x"></i>
+                              <div class="media-heading">
+                                  <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> MacBook Pro</a></h6><small class="cart-item-by">By Apple</small>
+                              </div>
+                              <div class="cart-item-qty">
+                                  <div class="input-group">
+                                      <input class="touchspin-cart" type="number" value="1">
+                                  </div>
+                              </div>
+                              <h5 class="cart-item-price">$2,999.00</h5>
+                          </div>
+                      </div>
                   </li>
-
-                  <li class="nav-item mx-3 my-0 py-0">
-                    <a class="nav-link pb-3" id="contact2-tab" data-toggle="tab" href="#contact2" role="tab" aria-controls="contact2" aria-selected="false">Others (5)</a>
+                  <li class="dropdown-menu-footer">
+                      <div class="d-flex justify-content-between mb-1">
+                          <h6 class="font-weight-bolder mb-0">Total:</h6>
+                          <h6 class="text-primary font-weight-bolder mb-0">$10,999.00</h6>
+                      </div><a class="btn btn-primary btn-block" href="app-ecommerce-checkout.html">Checkout</a>
                   </li>
-                </ul>
-
-                <div class="tab-content" id="myTabContent3">
-                  <div class="tab-pane fade show active" id="home2" role="tabpanel" aria-labelledby="home2-tab">
-                    <ul class="list-unstyled" data-simplebar style="height: 360px">
-                      <li>
-                        <a href="javscript:void(0)" class="media media-message media-notification">
-                          <div class="position-relative mr-3">
-                            <img class="rounded-circle" src="assets/img/user/u2.jpg" alt="Image">
-                            <span class="status away"></span>
+              </ul>
+          </li>
+          <li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"><i class="ficon" data-feather="bell"></i><span class="badge badge-pill badge-danger badge-up">5</span></a>
+              <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                  <li class="dropdown-menu-header">
+                      <div class="dropdown-header d-flex">
+                          <h4 class="notification-title mb-0 mr-auto">Notifications</h4>
+                          <div class="badge badge-pill badge-light-primary">6 New</div>
+                      </div>
+                  </li>
+                  <li class="scrollable-container media-list"><a class="d-flex" href="javascript:void(0)">
+                          <div class="media d-flex align-items-start">
+                              <div class="media-left">
+                                  <div class="avatar"><img src="assets/images/portrait/small/avatar-s-15.jpg" alt="avatar" width="32" height="32"></div>
+                              </div>
+                              <div class="media-body">
+                                  <p class="media-heading"><span class="font-weight-bolder">Congratulation Sam 🎉</span>winner!</p><small class="notification-text"> Won the monthly best seller badge.</small>
+                              </div>
                           </div>
-                          <div class="media-body d-flex justify-content-between">
-                            <div class="message-contents">
-                              <h4 class="title">Aaren</h4>
-                              <p class="last-msg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque odio, eligendi delectus vitae.</p>
-
-                              <span class="font-size-12 font-weight-medium text-secondary">
-                                <i class="mdi mdi-clock-outline"></i> 30 min ago...
-                              </span>
-                            </div>
+                      </a><a class="d-flex" href="javascript:void(0)">
+                          <div class="media d-flex align-items-start">
+                              <div class="media-left">
+                                  <div class="avatar"><img src="assets/images/portrait/small/avatar-s-3.jpg" alt="avatar" width="32" height="32"></div>
+                              </div>
+                              <div class="media-body">
+                                  <p class="media-heading"><span class="font-weight-bolder">New message</span>&nbsp;received</p><small class="notification-text"> You have 10 unread messages</small>
+                              </div>
                           </div>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="javscript:void(0)" class="media media-message media-notification media-active">
-                          <div class="position-relative mr-3">
-                            <img class="rounded-circle" src="assets/img/user/u1.jpg" alt="Image">
-                            <span class="status active"></span>
+                      </a><a class="d-flex" href="javascript:void(0)">
+                          <div class="media d-flex align-items-start">
+                              <div class="media-left">
+                                  <div class="avatar bg-light-danger">
+                                      <div class="avatar-content">MD</div>
+                                  </div>
+                              </div>
+                              <div class="media-body">
+                                  <p class="media-heading"><span class="font-weight-bolder">Revised Order 👋</span>&nbsp;checkout</p><small class="notification-text"> MD Inc. order updated</small>
+                              </div>
                           </div>
-                          <div class="media-body d-flex justify-content-between">
-                            <div class="message-contents">
-                              <h4 class="title">Abril</h4>
-                              <p class="last-msg">Donec mattis augue a nisl consequat, nec imperdiet ex rutrum. Fusce et vehicula enim. Sed in enim eu odio vehic.</p>
-
-                              <span class="font-size-12 font-weight-medium text-white">
-                                <i class="mdi mdi-clock-outline"></i> Just now...
-                              </span>
-                            </div>
+                      </a>
+                      <div class="media d-flex align-items-center">
+                          <h6 class="font-weight-bolder mr-auto mb-0">System Notifications</h6>
+                          <div class="custom-control custom-control-primary custom-switch">
+                              <input class="custom-control-input" id="systemNotification" type="checkbox" checked="">
+                              <label class="custom-control-label" for="systemNotification"></label>
                           </div>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="javscript:void(0)" class="media media-message media-notification">
-                          <div class="position-relative mr-3">
-                            <img class="rounded-circle" src="assets/img/user/u5.jpg" alt="Image">
-                            <span class="status away"></span>
+                      </div><a class="d-flex" href="javascript:void(0)">
+                          <div class="media d-flex align-items-start">
+                              <div class="media-left">
+                                  <div class="avatar bg-light-danger">
+                                      <div class="avatar-content"><i class="avatar-icon" data-feather="x"></i></div>
+                                  </div>
+                              </div>
+                              <div class="media-body">
+                                  <p class="media-heading"><span class="font-weight-bolder">Server down</span>&nbsp;registered</p><small class="notification-text"> USA Server is down due to hight CPU usage</small>
+                              </div>
                           </div>
-                          <div class="media-body d-flex justify-content-between">
-                            <div class="message-contents">
-                              <h4 class="title">Emma</h4>
-                              <p class="last-msg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque odio, eligendi delectus vitae.</p>
-
-                              <span class="font-size-12 font-weight-medium text-secondary">
-                                <i class="mdi mdi-clock-outline"></i> 1 hrs ago...
-                              </span>
-                            </div>
+                      </a><a class="d-flex" href="javascript:void(0)">
+                          <div class="media d-flex align-items-start">
+                              <div class="media-left">
+                                  <div class="avatar bg-light-success">
+                                      <div class="avatar-content"><i class="avatar-icon" data-feather="check"></i></div>
+                                  </div>
+                              </div>
+                              <div class="media-body">
+                                  <p class="media-heading"><span class="font-weight-bolder">Sales report</span>&nbsp;generated</p><small class="notification-text"> Last month sales report generated</small>
+                              </div>
                           </div>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="javscript:void(0)" class="media media-message media-notification event-active">
-
-                          <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-info text-white">
-                            <i class="mdi mdi-calendar-check font-size-20"></i>
+                      </a><a class="d-flex" href="javascript:void(0)">
+                          <div class="media d-flex align-items-start">
+                              <div class="media-left">
+                                  <div class="avatar bg-light-warning">
+                                      <div class="avatar-content"><i class="avatar-icon" data-feather="alert-triangle"></i></div>
+                                  </div>
+                              </div>
+                              <div class="media-body">
+                                  <p class="media-heading"><span class="font-weight-bolder">High memory</span>&nbsp;usage</p><small class="notification-text"> BLR Server using high memory</small>
+                              </div>
                           </div>
-
-                          <div class="media-body d-flex justify-content-between">
-                            <div class="message-contents">
-                              <h4 class="title">New event added</h4>
-                              <p class="last-msg font-size-14">03/Jan/2020 (1pm - 2pm)</p>
-
-                              <span class="font-size-12 font-weight-medium text-secondary">
-                                <i class="mdi mdi-clock-outline"></i> 10 min ago...
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="javscript:void(0)" class="media media-message media-notification">
-
-                          <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-warning text-white">
-                            <i class="mdi mdi-chart-areaspline font-size-20"></i>
-                          </div>
-
-                          <div class="media-body d-flex justify-content-between">
-                            <div class="message-contents">
-                              <h4 class="title">Sales report</h4>
-                              <p class="last-msg font-size-14">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque odio, eligendi delectus vitae.</p>
-
-                              <span class="font-size-12 font-weight-medium text-secondary">
-                                <i class="mdi mdi-clock-outline"></i> 1 hrs ago...
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="javscript:void(0)" class="media media-message media-notification">
-
-                          <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-primary text-white">
-                            <i class="mdi mdi-account-multiple-check font-size-20"></i>
-                          </div>
-
-                          <div class="media-body d-flex justify-content-between">
-                            <div class="message-contents">
-                              <h4 class="title">Add request</h4>
-                              <p class="last-msg font-size-14">Add Dany Jones as your contact consequat nec imperdiet ex rutrum. Fusce et vehicula enim. Sed in enim.</p>
-
-                              <button type="button" class="my-1 btn btn-sm btn-success">Accept</button>
-                              <button type="button" class="my-1 btn btn-sm btn-secondary">Delete</button>
-
-                              <span class="font-size-12 font-weight-medium text-secondary d-block">
-                                <i class="mdi mdi-clock-outline"></i> 5 min ago...
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="javscript:void(0)" class="media media-message media-notification">
-
-                          <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-danger text-white">
-                            <i class="mdi mdi-server-network-off font-size-20"></i>
-                          </div>
-
-                          <div class="media-body d-flex justify-content-between">
-                            <div class="message-contents">
-                              <h4 class="title">Server overloaded</h4>
-                              <p class="last-msg font-size-14">Donec mattis augue a nisl consequat, nec imperdiet ex rutrum. Fusce et vehicula enim. Sed in enim eu odio vehic.</p>
-
-                              <span class="font-size-12 font-weight-medium text-secondary">
-                                <i class="mdi mdi-clock-outline"></i> 30 min ago...
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="javscript:void(0)" class="media media-message media-notification">
-
-                          <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-purple text-white">
-                            <i class="mdi mdi-playlist-check font-size-20"></i>
-                          </div>
-
-                          <div class="media-body d-flex justify-content-between">
-                            <div class="message-contents">
-                              <h4 class="title">Task complete</h4>
-                              <p class="last-msg font-size-14">Nam ut nisi erat. Ut quis tortor varius, hendrerit arcu quis, congue nisl. In scelerisque, sem ut ve.</p>
-
-                              <span class="font-size-12 font-weight-medium text-secondary">
-                                <i class="mdi mdi-clock-outline"></i> 2 hrs ago...
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-
-                    </ul>
-                  </div>
-
-                  <div class="tab-pane fade" id="profile2" role="tabpanel" aria-labelledby="profile2-tab">
-                    <ul class="list-unstyled" data-simplebar style="height: 360px">
-                      <li>
-                        <a href="javscript:void(0)" class="media media-message media-notification">
-                          <div class="position-relative mr-3">
-                            <img class="rounded-circle" src="assets/img/user/u6.jpg" alt="Image">
-                            <span class="status away"></span>
-                          </div>
-                          <div class="media-body d-flex justify-content-between">
-                            <div class="message-contents">
-                              <h4 class="title">William</h4>
-                              <p class="last-msg">Donec mattis augue a nisl consequat, nec imperdiet ex rutrum. Fusce et vehicula enim. Sed in enim eu odio vehic.</p>
-
-                              <span class="font-size-12 font-weight-medium text-secondary">
-                                <i class="mdi mdi-clock-outline"></i> 1 hrs ago...
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="javscript:void(0)" class="media media-message media-notification">
-                          <div class="position-relative mr-3">
-                            <img class="rounded-circle" src="assets/img/user/u7.jpg" alt="Image">
-                            <span class="status away"></span>
-                          </div>
-                          <div class="media-body d-flex justify-content-between">
-                            <div class="message-contents">
-                              <h4 class="title">Camble</h4>
-                              <p class="last-msg">Nam ut nisi erat. Ut quis tortor varius, hendrerit arcu quis, congue nisl. In scelerisque, sem ut ve.</p>
-
-                              <span class="font-size-12 font-weight-medium text-secondary">
-                                <i class="mdi mdi-clock-outline"></i> 1 hrs ago...
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="javscript:void(0)" class="media media-message media-notification media-active">
-                          <div class="position-relative mr-3">
-                            <img class="rounded-circle" src="assets/img/user/u1.jpg" alt="Image">
-                            <span class="status active"></span>
-                          </div>
-                          <div class="media-body d-flex justify-content-between">
-                            <div class="message-contents">
-                              <h4 class="title">Abril</h4>
-                              <p class="last-msg">Donec mattis augue a nisl consequat, nec imperdiet ex rutrum. Fusce et vehicula enim. Sed in enim eu odio vehic.</p>
-
-                              <span class="font-size-12 font-weight-medium text-white">
-                                <i class="mdi mdi-clock-outline"></i> Just now...
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="javscript:void(0)" class="media media-message media-notification">
-                          <div class="position-relative mr-3">
-                            <img class="rounded-circle" src="assets/img/user/u2.jpg" alt="Image">
-                            <span class="status away"></span>
-                          </div>
-                          <div class="media-body d-flex justify-content-between">
-                            <div class="message-contents">
-                              <h4 class="title">Aaren</h4>
-                              <p class="last-msg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque odio, eligendi delectus vitae.</p>
-
-                              <span class="font-size-12 font-weight-medium text-secondary">
-                                <i class="mdi mdi-clock-outline"></i> 1 hrs ago...
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="javscript:void(0)" class="media media-message media-notification">
-                          <div class="position-relative mr-3">
-                            <img class="rounded-circle" src="assets/img/user/u5.jpg" alt="Image">
-                            <span class="status away"></span>
-                          </div>
-                          <div class="media-body d-flex justify-content-between">
-                            <div class="message-contents">
-                              <h4 class="title">Emma</h4>
-                              <p class="last-msg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque odio, eligendi delectus vitae.</p>
-
-                              <span class="font-size-12 font-weight-medium text-secondary">
-                                <i class="mdi mdi-clock-outline"></i> 1 hrs ago...
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-
-                    </ul>
-                  </div>
-
-                  <div class="tab-pane fade" id="contact2" role="tabpanel" aria-labelledby="contact2-tab">
-                    <ul class="list-unstyled" data-simplebar style="height: 360px">
-                      <li>
-                        <a href="javscript:void(0)" class="media media-message media-notification event-active">
-
-                          <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-info text-white">
-                            <i class="mdi mdi-calendar-check font-size-20"></i>
-                          </div>
-
-                          <div class="media-body d-flex justify-content-between">
-                            <div class="message-contents">
-                              <h4 class="title">New event added</h4>
-                              <p class="last-msg font-size-14">03/Jan/2020 (1pm - 2pm)</p>
-
-                              <span class="font-size-12 font-weight-medium text-secondary">
-                                <i class="mdi mdi-clock-outline"></i> 10 min ago...
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="javscript:void(0)" class="media media-message media-notification">
-
-                          <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-warning text-white">
-                            <i class="mdi mdi-chart-areaspline font-size-20"></i>
-                          </div>
-
-                          <div class="media-body d-flex justify-content-between">
-                            <div class="message-contents">
-                              <h4 class="title">Sales report</h4>
-                              <p class="last-msg font-size-14">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam itaque doloremque odio, eligendi delectus vitae.</p>
-
-                              <span class="font-size-12 font-weight-medium text-secondary">
-                                <i class="mdi mdi-clock-outline"></i> 1 hrs ago...
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="javscript:void(0)" class="media media-message media-notification">
-
-                          <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-primary text-white">
-                            <i class="mdi mdi-account-multiple-check font-size-20"></i>
-                          </div>
-
-                          <div class="media-body d-flex justify-content-between">
-                            <div class="message-contents">
-                              <h4 class="title">Add request</h4>
-                              <p class="last-msg font-size-14">Add Dany Jones as your contact consequat nec imperdiet ex rutrum. Fusce et vehicula enim. Sed in enim.</p>
-
-                              <button type="button" class="my-1 btn btn-sm btn-success">Accept</button>
-                              <button type="button" class="my-1 btn btn-sm btn-secondary">Delete</button>
-
-                              <span class="font-size-12 font-weight-medium text-secondary d-block">
-                                <i class="mdi mdi-clock-outline"></i> 5 min ago...
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="javscript:void(0)" class="media media-message media-notification">
-
-                          <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-danger text-white">
-                            <i class="mdi mdi-server-network-off font-size-20"></i>
-                          </div>
-
-                          <div class="media-body d-flex justify-content-between">
-                            <div class="message-contents">
-                              <h4 class="title">Server overloaded</h4>
-                              <p class="last-msg font-size-14">Donec mattis augue a nisl consequat, nec imperdiet ex rutrum. Fusce et vehicula enim. Sed in enim eu odio vehic.</p>
-
-                              <span class="font-size-12 font-weight-medium text-secondary">
-                                <i class="mdi mdi-clock-outline"></i> 30 min ago...
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="javscript:void(0)" class="media media-message media-notification">
-
-                          <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-purple text-white">
-                            <i class="mdi mdi-playlist-check font-size-20"></i>
-                          </div>
-
-                          <div class="media-body d-flex justify-content-between">
-                            <div class="message-contents">
-                              <h4 class="title">Task complete</h4>
-                              <p class="last-msg font-size-14">Nam ut nisi erat. Ut quis tortor varius, hendrerit arcu quis, congue nisl. In scelerisque, sem ut ve.</p>
-
-                              <span class="font-size-12 font-weight-medium text-secondary">
-                                <i class="mdi mdi-clock-outline"></i> 2 hrs ago...
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                      </a>
+                  </li>
+                  <li class="dropdown-menu-footer"><a class="btn btn-primary btn-block" href="javascript:void(0)">Read all notifications</a></li>
+              </ul>
+          </li>
+          <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">John Doe</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user"><a class="dropdown-item" href="page-profile.html"><i class="mr-50" data-feather="user"></i> Profile</a><a class="dropdown-item" href="app-email.html"><i class="mr-50" data-feather="mail"></i> Inbox</a><a class="dropdown-item" href="app-todo.html"><i class="mr-50" data-feather="check-square"></i> Task</a><a class="dropdown-item" href="app-chat.html"><i class="mr-50" data-feather="message-square"></i> Chats</a>
+                  <div class="dropdown-divider"></div><a class="dropdown-item" href="page-account-settings.html"><i class="mr-50" data-feather="settings"></i> Settings</a><a class="dropdown-item" href="page-pricing.html"><i class="mr-50" data-feather="credit-card"></i> Pricing</a><a class="dropdown-item" href="page-faq.html"><i class="mr-50" data-feather="help-circle"></i> FAQ</a><a class="dropdown-item" href="page-auth-login-v2.html"><i class="mr-50" data-feather="power"></i> Logout</a>
               </div>
-            </div>
-
-            <ul class="dropdown-menu dropdown-menu-right d-none">
-              <li class="dropdown-header">You have 5 notifications</li>
-              <li>
-                <a href="#">
-                  <i class="mdi mdi-account-plus"></i> New user registered
-                  <span class=" font-size-12 d-inline-block float-right"><i class="mdi mdi-clock-outline"></i> 10 AM</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="mdi mdi-account-remove"></i> User deleted
-                  <span class=" font-size-12 d-inline-block float-right"><i class="mdi mdi-clock-outline"></i> 07 AM</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="mdi mdi-chart-areaspline"></i> Sales report is ready
-                  <span class=" font-size-12 d-inline-block float-right"><i class="mdi mdi-clock-outline"></i> 12 PM</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="mdi mdi-account-supervisor"></i> New client
-                  <span class=" font-size-12 d-inline-block float-right"><i class="mdi mdi-clock-outline"></i> 10 AM</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="mdi mdi-server-network-off"></i> Server overloaded
-                  <span class=" font-size-12 d-inline-block float-right"><i class="mdi mdi-clock-outline"></i> 05 AM</span>
-                </a>
-              </li>
-              <li class="dropdown-footer">
-                <a class="text-center" href="#"> View All </a>
-              </li>
-            </ul>
           </li>
-          <li class="right-sidebar-in right-sidebar-2-menu">
-            <i class="mdi mdi-settings mdi-spin"></i>
-          </li>
-          <!-- User Account -->
-          <li class="dropdown user-menu">
-            <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-              <img src="assets/img/user/user.png" class="user-image" alt="User Image" />
-              <span class="d-none d-lg-inline-block">Abdus Salam</span>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-right">
-              <!-- User image -->
-              <li class="dropdown-header">
-                <img src="assets/img/user/user.png" class="img-circle" alt="User Image" />
-                <div class="d-inline-block">
-                  Abdus Salam <small class="pt-1">iamabdus@gmail.com</small>
-                </div>
-              </li>
-
-              <li>
-                <a href="user-profile.html">
-                  <i class="mdi mdi-account"></i> My Profile
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="mdi mdi-email"></i> Message
-                </a>
-              </li>
-              <li>
-                <a href="#"> <i class="mdi mdi-diamond-stone"></i> Projects </a>
-              </li>
-              <li class="right-sidebar-in">
-                <a href="javascript:0"> <i class="mdi mdi-settings"></i> Setting </a>
-              </li>
-
-              <li class="dropdown-footer">
-                <a href="index.html"> <i class="mdi mdi-logout"></i> Log Out </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+      </ul>
+  </div>
+</nav>
+<ul class="main-search-list-defaultlist d-none">
+  <li class="d-flex align-items-center"><a href="javascript:void(0);">
+          <h6 class="section-label mt-75 mb-0">Files</h6>
+      </a></li>
+  <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+          <div class="d-flex">
+              <div class="mr-75"><img src="assets/images/icons/xls.png" alt="png" height="32"></div>
+              <div class="search-data">
+                  <p class="search-data-title mb-0">Two new item submitted</p><small class="text-muted">Marketing Manager</small>
+              </div>
+          </div><small class="search-data-size mr-50 text-muted">&apos;17kb</small>
+      </a></li>
+  <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+          <div class="d-flex">
+              <div class="mr-75"><img src="assets/images/icons/jpg.png" alt="png" height="32"></div>
+              <div class="search-data">
+                  <p class="search-data-title mb-0">52 JPG file Generated</p><small class="text-muted">FontEnd Developer</small>
+              </div>
+          </div><small class="search-data-size mr-50 text-muted">&apos;11kb</small>
+      </a></li>
+  <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+          <div class="d-flex">
+              <div class="mr-75"><img src="assets/images/icons/pdf.png" alt="png" height="32"></div>
+              <div class="search-data">
+                  <p class="search-data-title mb-0">25 PDF File Uploaded</p><small class="text-muted">Digital Marketing Manager</small>
+              </div>
+          </div><small class="search-data-size mr-50 text-muted">&apos;150kb</small>
+      </a></li>
+  <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+          <div class="d-flex">
+              <div class="mr-75"><img src="assets/images/icons/doc.png" alt="png" height="32"></div>
+              <div class="search-data">
+                  <p class="search-data-title mb-0">Anna_Strong.doc</p><small class="text-muted">Web Designer</small>
+              </div>
+          </div><small class="search-data-size mr-50 text-muted">&apos;256kb</small>
+      </a></li>
+  <li class="d-flex align-items-center"><a href="javascript:void(0);">
+          <h6 class="section-label mt-75 mb-0">Members</h6>
+      </a></li>
+  <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view.html">
+          <div class="d-flex align-items-center">
+              <div class="avatar mr-75"><img src="assets/images/portrait/small/avatar-s-8.jpg" alt="png" height="32"></div>
+              <div class="search-data">
+                  <p class="search-data-title mb-0">John Doe</p><small class="text-muted">UI designer</small>
+              </div>
+          </div>
+      </a></li>
+  <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view.html">
+          <div class="d-flex align-items-center">
+              <div class="avatar mr-75"><img src="assets/images/portrait/small/avatar-s-1.jpg" alt="png" height="32"></div>
+              <div class="search-data">
+                  <p class="search-data-title mb-0">Michal Clark</p><small class="text-muted">FontEnd Developer</small>
+              </div>
+          </div>
+      </a></li>
+  <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view.html">
+          <div class="d-flex align-items-center">
+              <div class="avatar mr-75"><img src="assets/images/portrait/small/avatar-s-14.jpg" alt="png" height="32"></div>
+              <div class="search-data">
+                  <p class="search-data-title mb-0">Milena Gibson</p><small class="text-muted">Digital Marketing Manager</small>
+              </div>
+          </div>
+      </a></li>
+  <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view.html">
+          <div class="d-flex align-items-center">
+              <div class="avatar mr-75"><img src="assets/images/portrait/small/avatar-s-6.jpg" alt="png" height="32"></div>
+              <div class="search-data">
+                  <p class="search-data-title mb-0">Anna Strong</p><small class="text-muted">Web Designer</small>
+              </div>
+          </div>
+      </a></li>
+</ul>
+<ul class="main-search-list-defaultlist-other-list d-none">
+  <li class="auto-suggestion justify-content-between"><a class="d-flex align-items-center justify-content-between w-100 py-50">
+          <div class="d-flex justify-content-start"><span class="mr-75" data-feather="alert-circle"></span><span>No results found.</span></div>
+      </a></li>
+</ul>

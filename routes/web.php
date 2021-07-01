@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,5 +22,6 @@ Route::group(
     ['namespace' => 'Admin', 'prefix' => 'admin'],
     function(){
         Route::get('/dashboard', [DashboardController::class, 'index']);
+        Route::get('/categories', [CategoryController::class, 'index']);
     }
 );
